@@ -27,7 +27,7 @@ udp.bind(orig)
 while True:
     # Recebe dados do socket
     msg, client = udp.recvfrom(1024)
-    print("Recebi = ",msg.decode("utf8"),", do cliente ", client)
+    print("Recebi = ",msg.decode("utf8")," do cliente ", client)
     # Converte letras minúsculas em maiúsculas
     msg_upper = msg.upper()
     # Envia nova mensagem ao cliente
