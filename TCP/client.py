@@ -30,5 +30,9 @@ msg = input()
 while msg != '\x18':
     # Enviando mensagem
     tcp.send(msg.encode())
+
+    # Recebe nova mensagem
+    msg_upper = tcp.recv(1024)
+    print("Recebi de volta = ",msg_upper.decode(),"\n")
     msg = input()
 tcp.close()

@@ -26,14 +26,20 @@ tcp.bind(orig)
 # Instrui o sistema operacional para colocar o socket em modo de ouvinte
 tcp.listen(1)
 
+# Aceita nova conexão
+connection, client = tcp.accept()
+print('Conexão realizada por = ', client)
+
 while True:
-    # Aceita nova conexão
-    connection, client = tcp.accept()
-    print('Conectando ao cliente = ', client)
-    while True:
-        # Recebe dados enquanto ainda houver
-        msg = connection.recv(1024)
-        if not msg: break
-        print("Recebi = ",msg," do cliente ",client)
-    print('Finalizando conexao do cliente', client)
-    connection.close()
+    # Recebe dados enquanto ainda houver
+    msg = connection.recv(1024).decode()
+    if '' == msg: break
+    print("Recebi = ", msg, " do cliente ", client)
+    # Converte letras minúsculas para maiúsculas
+    msg_upper = msg.upper()
+    # Envia nova mensagem ao cliente
+    connection.send(msg_upper.encode())
+
+print('Finalizando conexao do cliente', client)
+connection.close()
+tcp.close()
