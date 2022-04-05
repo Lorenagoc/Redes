@@ -1,3 +1,9 @@
+/*
+Aula prática 2 - Introdução à programação de Redes - Cefet/MG
+Integrantes: Bruna Gomes Camilo e Lorena Gomes de Oliveira Cabral
+Tema: Sockets
+*/
+
 import java.net.*; // Biblioteca para trabalhar com sockets
 import java.io.*; // Biblioteca para trabalhar com buffers
 

@@ -1,5 +1,6 @@
 '''
 Aula prática 2 - Introdução à programação de Redes - Cefet/MG
+Integrantes: Bruna Gomes Camilo e Lorena Gomes de Oliveira Cabral
 Tema: Sockets
 Referência: https://wiki.python.org.br/SocketBasico
 '''
